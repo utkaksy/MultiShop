@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{C63E77BE-BD73-4871-83A3-DD381E4D64D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Catalog", "Services\Catalog\MultiShop.Catalog\MultiShop.Catalog.csproj", "{9F26A349-834B-4E7B-BD38-CE768B009EEC}"
+EndProject
+<<<<<<< Updated upstream
+=======
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{0098F19F-B8E8-4FE7-8766-29794E209858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Discount", "Services\Discount\MultiShop.Discount\MultiShop.Discount.csproj", "{8D3ED4E5-6269-4A2C-91B1-146B85A815D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{0BF7F4D6-233F-4074-A400-224D360A2B79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{70C8B9B2-F449-4C8B-AC3A-B9C8E91CB7E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BBAB8457-0A5F-43EC-9509-1515664511C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B4736E0B-6DCB-464D-A09C-D7928F3F10BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Order.Domain", "Services\Order\Core\MultiShop.Order.Domain\MultiShop.Order.Domain.csproj", "{681360AE-6965-451D-BF4E-62D731ADF8D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Order.Application", "Services\Order\Core\MultiShop.Order.Application\MultiShop.Order.Application.csproj", "{46E4228C-B0A2-4793-852F-57CEA5F21DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Order.Persistence", "Services\Order\Infrastructure\MultiShop.Order.Persistence\MultiShop.Order.Persistence.csproj", "{BB31B36E-0316-4DFE-9C83-0D6306E0252D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Order.WebApi", "Services\Order\Presentation\MultiShop.Order.WebApi\MultiShop.Order.WebApi.csproj", "{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237}"
+EndProject
+>>>>>>> Stashed changes
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F26A349-834B-4E7B-BD38-CE768B009EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F26A349-834B-4E7B-BD38-CE768B009EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F26A349-834B-4E7B-BD38-CE768B009EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F26A349-834B-4E7B-BD38-CE768B009EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< Updated upstream
+=======
+		{8D3ED4E5-6269-4A2C-91B1-146B85A815D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3ED4E5-6269-4A2C-91B1-146B85A815D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3ED4E5-6269-4A2C-91B1-146B85A815D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3ED4E5-6269-4A2C-91B1-146B85A815D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681360AE-6965-451D-BF4E-62D731ADF8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681360AE-6965-451D-BF4E-62D731ADF8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681360AE-6965-451D-BF4E-62D731ADF8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681360AE-6965-451D-BF4E-62D731ADF8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E4228C-B0A2-4793-852F-57CEA5F21DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E4228C-B0A2-4793-852F-57CEA5F21DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E4228C-B0A2-4793-852F-57CEA5F21DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E4228C-B0A2-4793-852F-57CEA5F21DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB31B36E-0316-4DFE-9C83-0D6306E0252D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB31B36E-0316-4DFE-9C83-0D6306E0252D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB31B36E-0316-4DFE-9C83-0D6306E0252D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB31B36E-0316-4DFE-9C83-0D6306E0252D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Stashed changes
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C63E77BE-BD73-4871-83A3-DD381E4D64D3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9F26A349-834B-4E7B-BD38-CE768B009EEC} = {C63E77BE-BD73-4871-83A3-DD381E4D64D3}
+<<<<<<< Updated upstream
+=======
+		{0098F19F-B8E8-4FE7-8766-29794E209858} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8D3ED4E5-6269-4A2C-91B1-146B85A815D3} = {0098F19F-B8E8-4FE7-8766-29794E209858}
+		{0BF7F4D6-233F-4074-A400-224D360A2B79} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{70C8B9B2-F449-4C8B-AC3A-B9C8E91CB7E3} = {0BF7F4D6-233F-4074-A400-224D360A2B79}
+		{BBAB8457-0A5F-43EC-9509-1515664511C3} = {0BF7F4D6-233F-4074-A400-224D360A2B79}
+		{B4736E0B-6DCB-464D-A09C-D7928F3F10BB} = {0BF7F4D6-233F-4074-A400-224D360A2B79}
+		{681360AE-6965-451D-BF4E-62D731ADF8D4} = {70C8B9B2-F449-4C8B-AC3A-B9C8E91CB7E3}
+		{46E4228C-B0A2-4793-852F-57CEA5F21DC0} = {70C8B9B2-F449-4C8B-AC3A-B9C8E91CB7E3}
+		{BB31B36E-0316-4DFE-9C83-0D6306E0252D} = {BBAB8457-0A5F-43EC-9509-1515664511C3}
+		{40B6B8DC-A74E-4BB4-BDED-4605DEAAB237} = {B4736E0B-6DCB-464D-A09C-D7928F3F10BB}
+>>>>>>> Stashed changes
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D6A7294-0864-4E98-9C12-D2A3EAC2DB3A}
+	EndGlobalSection
+EndGlobal
