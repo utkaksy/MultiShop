@@ -12,7 +12,7 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
     public class GetAddressQueryHandler
     {
         private readonly IRepository<Address> _repository;
-public GetAddressQueryHandler(IRepository<Address> repository)
+        public GetAddressQueryHandler(IRepository<Address> repository)
         {
             _repository = repository;
         }
@@ -27,6 +27,6 @@ public GetAddressQueryHandler(IRepository<Address> repository)
                 District = x.District,
                 UserId = x.UserId
             }).ToList();
-        } 
+        }
     }
 }
