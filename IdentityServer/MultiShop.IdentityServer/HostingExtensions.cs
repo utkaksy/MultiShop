@@ -48,6 +48,9 @@ internal static class HostingExtensions
                 options.ClientSecret = "copy client secret from Google here";
             });
 
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+
         return builder.Build();
     }
     
@@ -59,6 +62,9 @@ internal static class HostingExtensions
         {
             app.UseDeveloperExceptionPage();
         }
+
+        app.MapControllers();
+        app.UseAuthentication();
 
         app.UseStaticFiles();
         app.UseRouting();
