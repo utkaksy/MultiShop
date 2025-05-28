@@ -12,7 +12,7 @@ using MultiShop.Discount.Context;
 namespace MultiShop.Discount.Migrations
 {
     [DbContext(typeof(DapperContext))]
-    [Migration("20250521193723_mig1")]
+    [Migration("20250528120752_mig1")]
     partial class mig1
     {
         /// <inheritdoc />

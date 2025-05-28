@@ -19,7 +19,7 @@ namespace MultiShop.Discount.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LEPUI1K; initial Catalog= MultiShopDiscountDb; integrated Security=true;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-LEPUI1K;Initial Catalog=MultiShopDiscountDb;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         public DbSet<Coupon> Coupons { get; set; }
