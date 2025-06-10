@@ -1,20 +1,15 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MultiShop.Catalog.Dtos.CategoryDtos;
 
-namespace MultiShop.Catalog.Entities
+namespace MultiShop.Catalog.Dtos.ProductDtos
 {
-    public class Product
+    public class ResultProductWithCategoryDto
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string ProductId { get; set; }
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
         public string ProductDescription { get; set; }
         public string ProductImageUrl { get; set; }
-        [BsonRepresentation(BsonType.ObjectId)]
         public string CategoryId { get; set; }
-        [BsonIgnore]
-        public Category Category { get; set; }
+        public string CategoryName{ get; set; }
     }
 }

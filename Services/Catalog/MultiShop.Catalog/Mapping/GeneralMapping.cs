@@ -7,15 +7,15 @@ using MultiShop.Catalog.Entities;
 
 namespace MultiShop.Catalog.Mapping
 {
-    public class GeneralMapping: Profile
+    public class GeneralMapping : Profile
     {
         public GeneralMapping()
         {
-            
-            CreateMap<Category,ResultCategoryDto>().ReverseMap();
-            CreateMap<Category,CreateCategoryDto>().ReverseMap();
-            CreateMap<Category,UpdateCategoryDto>().ReverseMap();
-            CreateMap<Category,GetByIdCategoryDto>().ReverseMap();
+
+            CreateMap<Category, ResultCategoryDto>().ReverseMap();
+            CreateMap<Category, CreateCategoryDto>().ReverseMap();
+            CreateMap<Category, UpdateCategoryDto>().ReverseMap();
+            CreateMap<Category, GetByIdCategoryDto>().ReverseMap();
 
             CreateMap<Product, ResultProductDto>().ReverseMap();
             CreateMap<Product, CreateProductDto>().ReverseMap();
@@ -31,6 +31,10 @@ namespace MultiShop.Catalog.Mapping
             CreateMap<ProductImage, CreateProductImageDto>().ReverseMap();
             CreateMap<ProductImage, UpdateProductImageDto>().ReverseMap();
             CreateMap<ProductImage, GetByIdProductImageDto>().ReverseMap();
+
+            CreateMap<Product, ResultProductWithCategoryDto>().ForMember(dest => dest.CategoryName,
+            opt => opt.MapFrom(src => src.Category != null ? src.Category.CategoryName : null)).ReverseMap();
+
         }
     }
 }
