@@ -18,6 +18,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         }
         
         [Route("Index")]
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             ViewBag.v1 = "Ana Sayfa";
@@ -26,7 +27,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             ViewBag.v0 = "İndirim Teklif İşlemleri";
 
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44343/api/OfferDistounts");
+            var responseMessage = await client.GetAsync("https://localhost:44343/api/OfferDiscounts");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
