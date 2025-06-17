@@ -19,7 +19,6 @@ namespace MultiShop.Catalog.Services.ProductServices
             _productCollection = database.GetCollection<Product>(_databaseSettings.ProductCollectionName);
             _categoryCollection = database.GetCollection<Category>(_databaseSettings.CategoryCollectionName);
             _mapper = mapper;
-
         }
         public async Task CreateProductAsync(CreateProductDto createProductDto)
         {
@@ -49,7 +48,7 @@ namespace MultiShop.Catalog.Services.ProductServices
             var values = await _productCollection.Find(x => true).ToListAsync();
             foreach (var item in values)
             {
-                item.Category = await _categoryCollection.Find<Category>(x => x.CategoryId == item.CategoryId).FirstAsync();
+                item.Category = await _categoryCollection.Find(x => x.CategoryId == item.CategoryId).FirstAsync();
             }
             return _mapper.Map<List<ResultProductWithCategoryDto>>(values);
         }
@@ -59,7 +58,7 @@ namespace MultiShop.Catalog.Services.ProductServices
             var values = await _productCollection.Find(x => x.CategoryId==id).ToListAsync();
             foreach (var item in values)
             {
-                item.Category = await _categoryCollection.Find<Category>(x => x.CategoryId == item.CategoryId).FirstAsync();
+                item.Category = await _categoryCollection.Find(x => x.CategoryId == item.CategoryId).FirstAsync();
             }
             return _mapper.Map<List<ResultProductWithCategoryDto>>(values);
         }

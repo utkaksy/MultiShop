@@ -83,7 +83,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
 
         [Route("CreateProduct")]
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateProductDto createProductDto)
+        public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createProductDto);
