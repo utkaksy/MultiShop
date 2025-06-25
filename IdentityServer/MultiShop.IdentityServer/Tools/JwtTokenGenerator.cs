@@ -14,7 +14,6 @@ namespace MultiShop.IdentityServer.Tools
             {
                 claims.Add(new Claim(ClaimTypes.Role, model.Role));
             }
-
             claims.Add(new Claim(ClaimTypes.NameIdentifier, model.Id));
 
             if (!string.IsNullOrWhiteSpace(model.Username))
