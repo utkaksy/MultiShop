@@ -4,13 +4,13 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamPathTemplate": "/services/catalog/{everything}",
-      "UpstreamScheme": "http",
+      "UpstreamScheme": "https",
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 64910
+          "Port": 44343
         }
       ],
       "AuthenticationOptions": {

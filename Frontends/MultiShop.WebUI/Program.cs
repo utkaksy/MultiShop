@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MultiShop.WebUI.Handlers;
 using MultiShop.WebUI.Services.Abstract;
+using MultiShop.WebUI.Services.CatalogServices.CategoryServices;
 using MultiShop.WebUI.Services.Concrete;
 using MultiShop.WebUI.Settings;
 
@@ -15,7 +16,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCo
     opt.Cookie.HttpOnly = true;
     opt.Cookie.SameSite = SameSiteMode.Strict;
     opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
-    opt.Cookie.Name = "MultiShoopJwt";
+    opt.Cookie.Name = "MultiShopJwt";
 });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opt =>
@@ -25,6 +26,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opt.Cookie.Name = "MultiShopCookie";
     opt.SlidingExpiration = true;
 });
+
+
+//builder.Services.AddAccessTokenManagement();
+builder.Services.AddMemoryCache(); // Bu önemli, unutma
+builder.Services.AddHttpClient<ClientCredentialTokenService>(); // DI için HttpClient kaydý
+builder.Services.AddScoped<IClientCredentialTokenService, ClientCredentialTokenService>();
+
 
 builder.Services.AddHttpContextAccessor();
 
@@ -39,12 +47,27 @@ builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection("Cli
 builder.Services.Configure<ServiceApiSettings>(builder.Configuration.GetSection("ServiceApiSettings"));
 
 builder.Services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+builder.Services.AddScoped<ClientCredentialTokenHandler>();
+
+builder.Services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
+
+// Handler için DI kaydý da þart:
+builder.Services.AddTransient<ClientCredentialTokenHandler>();
 
 var values = builder.Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+
 builder.Services.AddHttpClient<IUserService, UserService>(opt =>
 {
     opt.BaseAddress = new Uri(values.IdentityServerUrl);
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<ICategoryService, CategoryService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}");
+}).AddHttpMessageHandler<ClientCredentialTokenHandler>();
+
+
+
 
 var app = builder.Build();
 
