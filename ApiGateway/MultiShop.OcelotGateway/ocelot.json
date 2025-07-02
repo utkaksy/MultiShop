@@ -99,13 +99,13 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamPathTemplate": "/services/comment/{everything}",
-      "UpstreamScheme": "http",
+      "UpstreamScheme": "https",
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 4984
+          "Port": 44378
         }
       ],
       "AuthenticationOptions": {
