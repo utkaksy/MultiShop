@@ -11,9 +11,9 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
     [Route("Admin/Category")]
     public class CategoryController : Controller
     {
+        //Clientfactory e artık ihtiyaç yok
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ICategoryService _categoryService;
-
 
         public CategoryController(IHttpClientFactory httpClientFactory, ICategoryService categoryService)
         {
