@@ -10,7 +10,9 @@ using System.IdentityModel.Tokens.Jwt;
 var builder = WebApplication.CreateBuilder(args);
 
 var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
@@ -36,8 +38,6 @@ builder.Services.AddControllers(opt =>
 });
 
 // Add services to the container.
-
-builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
@@ -49,7 +49,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 

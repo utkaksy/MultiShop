@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MultiShop.WebUI.Handlers;
 using MultiShop.WebUI.Services.Abstract;
+using MultiShop.WebUI.Services.BasketServices;
 using MultiShop.WebUI.Services.CatalogServices.AboutServices;
 using MultiShop.WebUI.Services.CatalogServices.BrandServices;
 using MultiShop.WebUI.Services.CatalogServices.CategoryServices;
@@ -19,14 +20,14 @@ using MultiShop.WebUI.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCookie(JwtBearerDefaults.AuthenticationScheme, opt =>
+/*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCookie(JwtBearerDefaults.AuthenticationScheme, opt =>
 {
     opt.LoginPath = "/Login/Index/";
     opt.LogoutPath = "/Login/Logout/";
     opt.AccessDeniedPath = "/Pages/AccessDenied/";
     opt.Cookie.HttpOnly = true;
     opt.Cookie.SameSite = SameSiteMode.Strict;
-    opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+    opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest; 
     opt.Cookie.Name = "MultiShopJwt";
 });
 
@@ -36,7 +37,29 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     opt.ExpireTimeSpan = TimeSpan.FromDays(5);
     opt.Cookie.Name = "MultiShopCookie";
     opt.SlidingExpiration = true;
-});
+});*/
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+    {
+        options.LoginPath = "/Login/Index/";
+        options.LogoutPath = "/Login/Logout/";
+        options.AccessDeniedPath = "/Pages/AccessDenied/";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SameSite = SameSiteMode.Strict;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.Cookie.Name = "MultiShopCookie";
+        options.ExpireTimeSpan = TimeSpan.FromDays(5);
+        options.SlidingExpiration = true;
+    })
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = builder.Configuration["IdentityServerUrl"]; // IdentityServer adresi
+        options.Audience = "ResourceOcelot";
+        options.RequireHttpsMetadata = false; // Dev ortamý için
+        
+    });
+
 
 
 //builder.Services.AddAccessTokenManagement();
@@ -70,6 +93,11 @@ var values = builder.Configuration.GetSection("ServiceApiSettings").Get<ServiceA
 builder.Services.AddHttpClient<IUserService, UserService>(opt =>
 {
     opt.BaseAddress = new Uri(values.IdentityServerUrl);
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IBasketService, BasketService>(opt =>
+{
+    opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Basket.Path}");
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
 builder.Services.AddHttpClient<ICategoryService, CategoryService>(opt =>

@@ -39,7 +39,18 @@ namespace MultiShop.Basket.Controllers
         public async Task<IActionResult> DeleteBasket()
         {
             await _basketService.DeleteBasket(_loginService.GetUserId);
-            return Ok("SepetBaşarıyla Silindi");
+            return Ok("Sepet Başarıyla Silindi");
         }
+
+        [HttpGet("claims")]
+        public IActionResult SeeClaims()
+        {
+            if (User.Identity?.IsAuthenticated != true)
+                return Unauthorized("Kullanıcı doğrulanamadı");
+
+            var claims = User.Claims.Select(c => new { c.Type, c.Value });
+            return Ok(claims);
+        }
+
     }
 }
