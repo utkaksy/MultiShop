@@ -19,15 +19,15 @@ namespace MultiShop.WebUI.Controllers
 
         public async Task<IActionResult> Index(string code,int rate)
         {
+            var values = await _basketService.GetBasket();
+            var tax = values.TotalPrice * 1 / 10;
+            var PriceWithTax = values.TotalPrice + tax;
             ViewBag.code = code;
             ViewBag.rate = rate;
-            var values = await _basketService.GetBasket();
             ViewBag.total = values.TotalPrice;
-            var totalPriceWithTax = values.TotalPrice+values.TotalPrice * 1 / 10;
-            ViewBag.totalPriceWithTax = totalPriceWithTax;
-            var tax = values.TotalPrice * 1 / 10;
+            ViewBag.totalPriceWithTax = PriceWithTax;
             ViewBag.tax = tax;
-            ViewBag.totalPriceWithDiscount = totalPriceWithTax - totalPriceWithTax * rate / 100;
+            ViewBag.totalPriceWithDiscount = PriceWithTax - PriceWithTax * rate / 100;
             return View();
         }
 
