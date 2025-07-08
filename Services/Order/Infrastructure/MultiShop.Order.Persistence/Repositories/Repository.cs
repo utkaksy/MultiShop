@@ -46,6 +46,11 @@ namespace MultiShop.Order.Persistence.Repositories
             return await _orderContext.Set<T>().FindAsync(id);
         }
 
+        public async Task<List<T>> GetListByFilterAsync(Expression<Func<T, bool>> filter)
+        {
+            return await _orderContext.Set<T>().Where(filter).ToListAsync();
+        }
+
         public async Task UpdateAsync(T entity)
         {
             _orderContext.Set<T>().Update(entity);

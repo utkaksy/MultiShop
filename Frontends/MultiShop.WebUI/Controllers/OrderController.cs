@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MultiShop.DtoLayer.OrderDtos;
+using MultiShop.DtoLayer.OrderDtos.OrderAddressDtos;
 using MultiShop.WebUI.Services.Abstract;
 using MultiShop.WebUI.Services.OrderServices.OrderAddressServices;
 using System.Threading.Tasks;
