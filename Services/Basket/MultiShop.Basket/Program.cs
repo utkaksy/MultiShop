@@ -10,8 +10,9 @@ using System.IdentityModel.Tokens.Jwt;
 var builder = WebApplication.CreateBuilder(args);
 
 var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
-JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub"); Can't use in .NET8
+//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();        "     "   "   "
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
