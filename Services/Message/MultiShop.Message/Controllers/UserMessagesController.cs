@@ -5,7 +5,7 @@ using MultiShop.Message.Dtos;
 using MultiShop.Message.Services;
 using System.Threading.Tasks;
 
-namespace MultiShop.Message.Controller
+namespace MultiShop.Message.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -32,14 +32,14 @@ namespace MultiShop.Message.Controller
             return Ok(values);
         }
 
-        [HttpGet("GetMessageInbox")]
+        [HttpGet("GetMessageInbox/{id}")]
         public async Task<IActionResult> GetInboxMessagesAsync(string id)
         {
             var values = await _userMessageService.GetInboxMessagesAsync(id);
             return Ok(values);
         }
 
-        [HttpGet]
+        [HttpGet("GetByIdMessage/{id}")]
         public async Task<IActionResult> GetByIdMessageAsync(int id)
         {
             var values = await _userMessageService.GetByIdMessageAsync(id);
@@ -60,7 +60,7 @@ namespace MultiShop.Message.Controller
             return Ok("Başarılı");
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> UpdateMessage(UpdateMessageDto updateMessageDto)
         {
             await _userMessageService.UpdateMessage(updateMessageDto);
