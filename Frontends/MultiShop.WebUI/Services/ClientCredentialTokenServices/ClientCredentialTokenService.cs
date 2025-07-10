@@ -2,10 +2,9 @@
 using IdentityModel.Client;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using MultiShop.WebUI.Services.Abstract;
 using MultiShop.WebUI.Settings;
 
-namespace MultiShop.WebUI.Services.Concrete
+namespace MultiShop.WebUI.Services.ClientCredentialTokenServices
 {
     public class ClientCredentialTokenService : IClientCredentialTokenService
     {

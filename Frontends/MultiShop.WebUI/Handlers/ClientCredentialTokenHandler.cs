@@ -1,5 +1,4 @@
-﻿
-using MultiShop.WebUI.Services.Abstract;
+﻿using MultiShop.WebUI.Services.ClientCredentialTokenServices;
 using System.Net;
 using System.Net.Http.Headers;
 

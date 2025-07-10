@@ -12,9 +12,16 @@ namespace MultiShop.Cargo.DataAccessLayer.EntityFramework
 {
     public class EfCargoCustomerDal : GenericRepository<CargoCustomer>, ICargoCustomerDal
     {
+        private readonly CargoContext _context;
         public EfCargoCustomerDal(CargoContext cargoContext) : base(cargoContext)
         {
-            
+            _context = cargoContext;
+        }
+
+        public CargoCustomer GetCargoCustomerById(string id)
+        {
+            var values = _context.CargoCustomers.Where(x => x.UserCustomerID == id).FirstOrDefault();
+            return values;
         }
     }
 }

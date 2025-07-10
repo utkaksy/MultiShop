@@ -1,4 +1,4 @@
-﻿namespace MultiShop.WebUI.Services.Abstract
+﻿namespace MultiShop.WebUI.Services.ClientCredentialTokenServices
 {
     public interface IClientCredentialTokenService
     {
