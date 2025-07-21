@@ -68,7 +68,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             return View(value);
         }
 
-        [Route("UpdateAbout/{id}")]
+        [Route("UpdateAbout")]
         [HttpPost]
         public async Task<IActionResult> UpdateAbout(UpdateAboutDto updateAboutDto)
         {

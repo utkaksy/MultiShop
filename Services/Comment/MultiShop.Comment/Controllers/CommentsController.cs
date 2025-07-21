@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MultiShop.Comment.Context;
 using MultiShop.Comment.Entites;
 using System.Threading.Tasks;
@@ -64,6 +65,27 @@ namespace MultiShop.Comment.Controllers
         {
             var values = _commentContext.UserComments.Where(x=>x.ProductId==id).ToList();
             return Ok(values);
+        }
+
+        [HttpGet("GetActiveCommentCount")]
+        public IActionResult GetActiveCommentCount()
+        {
+            int value = _commentContext.UserComments.Where(x => x.Status == true).Count();
+            return Ok(value);
+        }
+
+        [HttpGet("GetPassiveCommentCount")]
+        public IActionResult GetPassiveCommentCount()
+        {
+            int value = _commentContext.UserComments.Where(x => x.Status == false).Count();
+            return Ok(value);
+        }
+
+        [HttpGet("GetTotalCommentCount")]
+        public IActionResult GetTotalCommentCount()
+        {
+            int value = _commentContext.UserComments.Count();
+            return Ok(value);
         }
     }
 }

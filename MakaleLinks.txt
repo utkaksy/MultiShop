@@ -1,0 +1,70 @@
+
+IdentityServer:
+https://medium.com/innoviletech/net-core-mikroservis-mimarisinde-identityserver4-framework%C3%BC-932c82e2b88c#:~:text=Bu%20yaz%C4%B1mda%20sizlere%20dilimin%20d%C3%B6nd%C3%BC%C4%9F%C3%BC%20kadar%C4%B1yla%20IdenitityServer4%20Framework%E2%80%99%C3%BCn%C3%BCn%20teorik%20bilgisini
+
+Mediator:
+https://refactoring.guru/design-patterns/mediator#:~:text=Mediator%20is%20a%20behavioral%20design%20pattern%20that%20lets%20you%20reduce
+
+CQRS:
+https://sefikcankanber.medium.com/cqrs-command-query-responsibility-segregation-nedir-16b196376389#:~:text=CQRS,%20ana%20oda%C4%9F%C4%B1%20write%20(yazma)%20ve%20read%20(okuma)%20sorumluluklar%C4%B1n%C4%B1n%20ayr%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1na
+
+MongoDB:
+https://medium.com/@berkekurnaz/nedir-bu-mongodb-994a94a9d1df#:~:text=MongoDB%20Nedir%20?%20MongoDB%202009%20y%C4%B1l%C4%B1nda%20geli%C5%9Ftirilmi%C5%9F%20a%C3%A7%C4%B1k%20kaynak%20kodlu
+
+Onion Arc:
+https://fatih-gunalp.medium.com/1-asp-net-coreda-onion-mimarisine-genel-bak%C4%B1%C5%9F-67940d3c43d8#:~:text=Bu%20yaz%C4%B1da%20Asp.Net%20Core%20%C3%BCzerinde%20Onion%20(So%C4%9Fan)%20mimarisini%20anlataca%C4%9F%C4%B1m.%20Onion
+
+Docker Nedir?:
+https://aws.amazon.com/tr/docker/
+
+Dapper 1:
+
+https://medium.com/neredekaltech/dapper-nedir-dapper-temelleri-ve-kullan%C4%B1m%C4%B1-b17094aa8289#:~:text=Dapper,%202011%20y%C4%B1l%C4%B1nda%20Stackoverflow%20ekibindeki%20ki%C5%9Filer%20taraf%C4%B1nca%20yaz%C4%B1lm%C4%B1%C5%9F%20a%C3%A7%C4%B1k%20kaynak
+
+Dapper 2:
+
+https://medium.com/software-development-turkey/micro-orm-lerin-kral%C4%B1-dapper-nedir-ec5838b115ac#:~:text=Bu%20yaz%C4%B1mda%20size%20Dapper%E2%80%99%C4%B1n%20Query%20ve%20Execute%20fonksiyonlar%C4%B1ndan%20bahsedece%C4%9Fim.%20%C3%96rneklere
+
+Docker Kurulumu :
+
+https://medium.com/@seherkumsar/docker-kurulumu-windows-11-home-s%C3%BCr%C3%BCm%C3%BCnde-hyper-v-kurulumu-46887387d640#:~:text=Docker%20Kurulumu.%20Docker%20Desktop%E2%80%99un%20%C4%B0ndirilmesi%20ve%20Kurulumu.%20%C4%B0lk%20ad%C4%B1m%20olarak
+
+MediatR:
+
+https://medium.com/@hacisongur01/mediatr-nedir-1eca33ec6ed2#:~:text=MediatR%2C%20bir%20CQRS%20%28Command%20Query%20Responsibility%20Segregation%29%20k%C3%BCt%C3%BCphanesidir,daha%20etkili%20bir%20%C5%9Fekilde%20organize%20etmeye%20yard%C4%B1mc%C4%B1%20olur.
+
+JWT :
+https://tugrulbayrak.medium.com/jwt-json-web-tokens-nedir-nasil-calisir-5ca6ebc1584a#:~:text=JWT%20olduk%C3%A7a%20pop%C3%BCler%20ve%20tercih%20edilen%20bir%20y%C3%B6ntemdir.%20%C3%96nce%20JWT
+
+CORS :
+
+https://medium.com/@gokhansengun/cors-nedir-ve-ne-i%C5%9Fe-yarar-27006d85bf54
+
+Redis:
+
+https://medium.com/devopsturkiye/redis-nedir-ne-i%CC%87%C5%9Fe-yarar-1a19ebbdb2b4
+
+Ocelot
+
+https://www.serifaydin.com/post/ocelot-nedir-api-gateway-nedir-ocelot-identity-server-ve-net-uygulamalar%C4%B1nda-ocelot-kullan%C4%B1m%C4%B1
+
+Google Cloud Storage:
+https://medium.com/@goktugfevziozcelik/google-cloud-storage-kullan%C4%B1m%C4%B1-246ff44b2791
+
+
+
+edit: ileriki bölümlerde olanlar
+
+RabbitMQ
+
+ https://medium.com/@tlhashin/rabbitmq-nedir-203cd8fe7318
+
+https://furkangulsen.medium.com/rabbitmq-nedir-neden-kullanilir-73f319ba9a94
+
+https://medium.com/@ademolguner/rabbitmq-nedir-nas%C4%B1l-kurulur-nas%C4%B1l-konfig%C3%BCre-edilir-ea596a7c1c08
+
+https://medium.com/@ozcankaraa/rabbitmq-sihirbazl%C4%B1%C4%9F%C4%B1-mesaj-kuyruklar%C4%B1yla-b%C3%BCy%C3%BCleyici-bir-yolculuk-526cfa20a59f
+
+Localization
+
+https://medium.com/@umit__akinci/asp-net-core-mvc-de-localization-yap%C4%B1s%C4%B1-c44d27e569bf

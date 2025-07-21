@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MultiShop.Message.Dtos;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MultiShop.Message.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserMessagesController : ControllerBase
@@ -65,6 +67,20 @@ namespace MultiShop.Message.Controllers
         {
             await _userMessageService.UpdateMessage(updateMessageDto);
             return Ok("Başarılı");
+        }
+
+        [HttpGet("GetTotalMessageCount")]
+        public async Task<IActionResult> GetTotalMessageCount()
+        {
+            int values = await _userMessageService.GetTotalMessageCount();
+            return Ok(values);
+        }
+
+        [HttpGet("GetTotalMessageCountByReceiverId")]
+        public async Task<IActionResult> GetTotalMessageCountByReceiverId(string id)
+        {
+            int values = await _userMessageService.GetTotalMessageCountByReceiverId(id);
+            return Ok(values);
         }
     }
 }

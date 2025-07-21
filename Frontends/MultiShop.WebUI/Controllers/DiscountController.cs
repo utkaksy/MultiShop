@@ -19,7 +19,7 @@ namespace MultiShop.WebUI.Controllers
         [HttpGet]
         public PartialViewResult ConfirmDiscountCoupon()
         {
-            return PartialView();
+            return PartialView();   
         }
 
         [HttpPost]

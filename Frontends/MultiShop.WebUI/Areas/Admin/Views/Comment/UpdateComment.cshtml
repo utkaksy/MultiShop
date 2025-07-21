@@ -11,7 +11,7 @@
                 <h4>Yorum Güncelleme Sayfası</h4>
                 <br />
                 <div class="bs-example" data-example-id="bordered-table">
-                    <form method="post">
+                    <form method="post" asp-area="Admin" asp-controller="Comment" asp-action="UpdateComment" asp-route-id="">
                         <input type="hidden" asp-for="UserCommentId" />
                         <input type="hidden" asp-for="ProductId" />
                         <label>Kullanıcı Adı</label>

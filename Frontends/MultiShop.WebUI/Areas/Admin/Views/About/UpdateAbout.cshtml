@@ -12,7 +12,7 @@
                 <h4>Hakkında Güncelleme Sayfası</h4>
                 <br />
                 <div class="bs-example" data-example-id="bordered-table">
-                    <form method="post">
+                    <form method="post" asp-area="Admin" asp-controller="About" asp-action="UpdateAbout" asp-route-id="">
                         <input type="hidden" asp-for="AboutId" />
                         <label>Hakkında</label>
                         <input type="text" class="form-control" asp-for="Description" />

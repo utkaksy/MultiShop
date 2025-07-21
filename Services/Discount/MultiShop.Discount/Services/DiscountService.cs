@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using MultiShop.Discount.Context;
 using MultiShop.Discount.Dtos;
 
@@ -69,6 +70,16 @@ namespace MultiShop.Discount.Services
             {
                 var value = await connection.QueryFirstOrDefaultAsync<ResultDiscountCouponDto>(query, parameters);
                 return value;
+            }
+        }
+
+        public async Task<int> GetDiscountCouponCount()
+        {
+            string query = "Select Count(*) From Coupons";
+            using (var connection = _dapperContext.CreateConnection())
+            {
+                var values = await connection.QueryFirstOrDefaultAsync<int>(query);
+                return values;
             }
         }
 

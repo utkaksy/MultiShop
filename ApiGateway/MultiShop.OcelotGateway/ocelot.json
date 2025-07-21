@@ -4,13 +4,13 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamPathTemplate": "/services/catalog/{everything}",
-      "UpstreamScheme": "https",
+      "UpstreamScheme": "http",
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44343
+          "Port": 5003
         }
       ],
       "AuthenticationOptions": {
@@ -29,7 +29,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 59764
+          "Port": 5270
         }
       ],
       "AuthenticationOptions": {
@@ -99,13 +99,13 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamPathTemplate": "/services/comment/{everything}",
-      "UpstreamScheme": "https",
+      "UpstreamScheme": "http",
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44378
+          "Port": 5081
         }
       ],
       "AuthenticationOptions": {
@@ -156,13 +156,13 @@
     {
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "UpstreamPathTemplate": "/services/message/{everything}",
-      "UpstreamScheme": "https",
+      "UpstreamScheme": "http",
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7021
+          "Port": 5214
         }
       ],
       "AuthenticationOptions": {
